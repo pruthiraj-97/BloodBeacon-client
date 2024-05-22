@@ -1,0 +1,2 @@
+export const WEB_LOGO=`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQirgKD3hRvp0soVYft2eNWTPcKaqBVjz4t8eFuwOwHKg&s`
+export const PROFILE_LOGO=`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIC5q3uLFJ80sLA23BMSXPz6-R4P6fe1AjBWcNCw8RVQ&s`

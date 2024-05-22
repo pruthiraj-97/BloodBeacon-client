@@ -31,7 +31,7 @@ const BloodBankDetailsComponent = () => {
 
   return (
     <div className="blood-bank-container">
-      <h1>Blood Bank Details</h1>
+      <h3>Blood Bank Details</h3>
       <div className="blood-bank-details">
         <p><strong>Name:</strong> {bloodBank.name}</p>
         <p><strong>Email:</strong> {bloodBank.email}</p>

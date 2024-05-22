@@ -31,7 +31,6 @@
     }
   }
   .blood-groups{
-    border: 1px solid greenyellow;
     display: flex;
     flex-wrap: wrap;
   }

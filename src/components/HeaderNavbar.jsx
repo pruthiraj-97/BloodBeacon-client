@@ -12,10 +12,12 @@ function HeaderNavbar(){
             <div className="navbar-logo">
               <img src={WEB_LOGO} alt="Profile Logo" />
             </div>
-            <div className="navbar-links">
+            <h3 className="web-name">BloodBeacon</h3>
+           <div className="navbar-container">
+           <div className="navbar-links">
                 <Link href="/">Home</Link>
                 <Link href="/about">About</Link>
-                <Link href="/connect">Connect with BloodBank</Link>
+                <Link href="/bloodbank/searchbloodbank">Near BloodBank</Link>
             </div>
             <div className="navbar-icons">
                 <IoNotificationsSharp className="navbar-icon" />
@@ -32,6 +34,7 @@ function HeaderNavbar(){
                     )}
                 </div>
             </div>
+           </div>
         </div>
     );
 }

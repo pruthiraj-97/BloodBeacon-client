@@ -1,0 +1,73 @@
+.search-bloodBank {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid red;
+}
+
+.search-bloodBank h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: red;
+    margin-top: 0px;
+}
+
+.distance-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.distance-filter input,
+.distance-filter select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 300px;
+}
+
+.distance-filter button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 300px;
+}
+
+.distance-filter button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .search-bloodBank {
+        padding: 15px;
+    }
+
+    .distance-filter {
+        gap: 8px;
+    }
+
+    .distance-filter input,
+    .distance-filter select,
+    .distance-filter button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

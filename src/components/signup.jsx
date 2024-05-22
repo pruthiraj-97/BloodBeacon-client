@@ -3,14 +3,18 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import '../componentCSS/signup.css';
 import { backend_url } from './BackenUrl';
 import { bloodGroup } from './BloodGroup';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import axios from 'axios';
 const SignUpComponent = () => {
+  const router=useRouter()
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [contactNumber,setContactNumber]=useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [bloodgroup,setBloodGroup]=useState('');
+  const [errors,setErrors]=useState([])
   async function signupUser(e){
     e.preventDefault();
     try {
@@ -28,6 +32,13 @@ const SignUpComponent = () => {
             })
         })
         const data=await response.json();
+        if(data.status==200){
+          router.push('/login')
+        }else if(data.status==500){
+          throw new Error(data.message)
+        }else{
+          setErrors(data.message)
+        }
         console.log(data)
     } catch (error) {
         console.log('error is ',error)
@@ -36,6 +47,11 @@ const SignUpComponent = () => {
 
   return (
     <div className="signup-container">
+      {
+        errors.length>0 && errors.map((error,index)=>(
+          <p key={index} className="error-message">{error}</p>
+        ))
+      }
       <form  className="signup-form">
         <h3 className='signup-title'>Sign Up</h3>
         <div className='signup-div'>
@@ -102,6 +118,9 @@ const SignUpComponent = () => {
         <button className="signup-button"
           onClick={signupUser}
         >Sign Up</button>
+        <p className='login-r'>Already have an account? <Link href={`/login`}
+          className='signup-link'
+        >Login</Link></p>
       </form>
     </div>
   );

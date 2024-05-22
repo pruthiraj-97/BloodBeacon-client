@@ -3,11 +3,14 @@ import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { backend_url } from './BackenUrl';
 import '../componentCSS/login.css';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 const LoginComponent = () => {
+  const router=useRouter()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState();
+  const [errors, setErrors] = useState([]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -22,16 +25,27 @@ const LoginComponent = () => {
         }),
       });
       const data = await response.json();
-      console.log(data);
+      if(data.status==200){
+        localStorage.setItem('token',data.token)
+        router.push('/')
+      }else if(data.status==500){
+        throw new Error(data.message)
+      }else{
+        setErrors(data.message)
+      }
     } catch (error) {
       throw new Error(error);
     }
   };
   return (
     <div className="login-container">
+      {
+        errors&&errors.map((error,index)=>(
+          <p key={index} className="error-message">{error}</p>
+        ))
+      }
       <form onSubmit={handleSubmit} className="login-form">
         <h3 className="login-title">Log In</h3>
-        {error && <p className="error-message">{error}</p>}
         <div className="login-div">
           <label htmlFor="email">Email:</label>
           <input
@@ -64,6 +78,9 @@ const LoginComponent = () => {
         <button type="submit" className="login-button">
           Log In
         </button>
+        <p className='login-p'>Don't have an account? <Link href={`/signup`}
+           className='login-link'
+        >Sign Up</Link></p>
       </form>
     </div>
   );

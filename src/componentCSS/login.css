@@ -4,6 +4,7 @@
     padding: 20px;
     border: 2px solid red;
     border-radius: 5px;
+    margin-top: 20px;
   }
   
   .login-form {
@@ -25,11 +26,12 @@
   }
   
   .login-input {
-    width: 100%;
+    width: 95%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-top: 5px;
+    border: 1px solid black;
   }
   
   .password-div {
@@ -72,5 +74,14 @@
     .login-container {
       max-width: 300px;
     }
+  }
+  .login-p{
+    font-size: 15px;
+    color: rgb(255, 55, 0);
+    text-align: center;
+  }
+  .login-link{
+     text-decoration: none;
+     color: rgb(34, 255, 0);
   }
   

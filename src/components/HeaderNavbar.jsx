@@ -5,9 +5,28 @@ import '@/componentCSS/HeaderNavbar.css'
 import { useState,useEffect } from "react";
 import { WEB_LOGO, PROFILE_LOGO } from "@/dataControl/imageUrls";
 import { IoNotificationsSharp } from "react-icons/io5";
+import { FaBars,FaBell } from 'react-icons/fa';
+import NotificationIcon from "./notificationIcon";
+import SideBarComponent from "./leftSideBar";
 function HeaderNavbar(){
     const [profileDropdown, setProfileDropdown] = useState(false);
+    const[isSideBar,SetIsSideBar]=useState(false)
+    function toggleSideBar(){
+      console.log("clicked")
+      SetIsSideBar(!isSideBar)
+    }
     return (
+        <>
+          <div className="side-bar-div">
+          <FaBars className="sidebar-icon"
+             onClick={toggleSideBar}
+          />
+          <h4>Wellcome to BloogBeacon</h4>
+           <NotificationIcon/>
+          </div>
+          {
+            isSideBar?<SideBarComponent/>:""  
+          }
         <div className="navbar">
             <div className="navbar-logo">
               <img src={WEB_LOGO} alt="Profile Logo" />
@@ -36,6 +55,7 @@ function HeaderNavbar(){
             </div>
            </div>
         </div>
+        </>
     );
 }
 export default HeaderNavbar

@@ -2,17 +2,15 @@
 import React from "react";
 import Link from "next/link";
 import '@/componentCSS/HeaderNavbar.css'
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { WEB_LOGO, PROFILE_LOGO } from "@/dataControl/imageUrls";
-import { IoNotificationsSharp } from "react-icons/io5";
-import { FaBars,FaBell } from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa';
 import NotificationIcon from "./notificationIcon";
 import SideBarComponent from "./leftSideBar";
 function HeaderNavbar(){
     const [profileDropdown, setProfileDropdown] = useState(false);
     const[isSideBar,SetIsSideBar]=useState(false)
     function toggleSideBar(){
-      console.log("clicked")
       SetIsSideBar(!isSideBar)
     }
     return (
@@ -31,7 +29,7 @@ function HeaderNavbar(){
             <div className="navbar-logo">
               <img src={WEB_LOGO} alt="Profile Logo" />
             </div>
-            <h3 className="web-name">BloodBeacon</h3>
+            <h3 className="web-name">Blood Beacon</h3>
            <div className="navbar-container">
            <div className="navbar-links">
                 <Link href="/">Home</Link>
@@ -39,7 +37,7 @@ function HeaderNavbar(){
                 <Link href="/bloodbank/searchbloodbank">Near BloodBank</Link>
             </div>
             <div className="navbar-icons">
-                <IoNotificationsSharp className="navbar-icon" />
+                <NotificationIcon/>
                 <div className="profile-menu">
                     <img src={PROFILE_LOGO} 
                       onClick={() => setProfileDropdown(!profileDropdown)}

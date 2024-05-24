@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import '@/componentCSS/sidebar.css'
 import { WEB_LOGO } from "@/dataControl/imageUrls";
-import { FaHome, FaInfo, FaHeartbeat, FaUser, FaSignInAlt } from 'react-icons/fa';
+import {FaUserPlus, FaHome, FaInfo, FaHeartbeat, FaUser, FaSignInAlt } from 'react-icons/fa';
 function SideBarComponent(){
     return (
         <div className="container">
@@ -34,6 +34,10 @@ function SideBarComponent(){
             <li>
             <FaSignInAlt className="icon" />
               <Link href={`/login`} className="sidebar-link">Login</Link>
+            </li>
+            <li>
+              <FaUserPlus className="icon"/>
+              <Link href={`/signup`} className="sidebar-link">signup</Link>
             </li>
           </ul>
         </nav>

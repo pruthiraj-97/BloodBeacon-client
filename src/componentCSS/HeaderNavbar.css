@@ -5,14 +5,14 @@
     background-color: #f6e4e4;
     padding: 10px 20px;
     position: relative;
-    border: 1px solid green;
+    border-radius: 10px;
 }
 
 .navbar-logo {
     display: flex;
     align-items: center;
     height: 50px; 
-    border: 1px solid green;
+    margin-left: 80px;
 }
 
 .navbar-logo img {
@@ -111,7 +111,6 @@
     margin-top: 20px;
 }
 .side-bar-div h4{
-    /* margin-right: 50px; */
     color: red;
 }
 .icon{
@@ -119,8 +118,13 @@
     font-size: 20px;
     cursor: pointer;
 }
-
-@media (max-width: 350px) {
+.navbar-container{
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@media (max-width: 400px) {
       .header {
         display: none;
       }

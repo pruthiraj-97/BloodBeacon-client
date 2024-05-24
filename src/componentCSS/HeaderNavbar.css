@@ -40,6 +40,8 @@
 .navbar-icons {
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
+    width: 150px;
 }
 
 .navbar-icon {
@@ -53,7 +55,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    cursor: pointer;
+    cursor: pointer
 }
 
 .profile-logo {

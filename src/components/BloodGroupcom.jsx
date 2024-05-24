@@ -12,7 +12,6 @@ function BloodGroupCompo({group,count,id}){
   async  function editBloodGroup(e){
       e.preventDefault()
       setIsEditing(false)
-      console.log(id)
       const response=await fetch(`${backend_url}/bloodbank/updatebloodgroup/${id}`,{
         method:'PUT',
         headers:{
@@ -25,7 +24,6 @@ function BloodGroupCompo({group,count,id}){
         })
       })
       const data=await response.json()
-      console.log(data)
       if(data.status==401){
          router.push('/login')
       }else if(data.status==400||data.status==500){

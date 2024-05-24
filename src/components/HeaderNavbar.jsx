@@ -19,7 +19,7 @@ function HeaderNavbar(){
           <FaBars className="sidebar-icon"
              onClick={toggleSideBar}
           />
-          <h4>Wellcome to BloogBeacon</h4>
+          <h4>Blood Beacon</h4>
            <NotificationIcon/>
           </div>
           {

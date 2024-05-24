@@ -17,7 +17,6 @@ const BloodBankDetailsComponent = () => {
            }
        })
        const data=await response.json()
-       console.log(data)
        setBloodBank(data.bloodBank)
        setLoding(false)
     })()

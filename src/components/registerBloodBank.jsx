@@ -15,7 +15,6 @@ function RegisterBloodBankComponent(){
     e.preventDefault()
     setIsRequested(true)
     const position=await getLocation()
-    console.log(position)
     try {
         const response=await fetch(`${backend_url}/bloodbank/registerbloodbank`,{
             method:'POST',
@@ -32,7 +31,6 @@ function RegisterBloodBankComponent(){
         })
      })
      const data=await response.json()
-     console.log(data)
      if(data.status==500){
       throw new Error(data.message)
      }

@@ -29,7 +29,6 @@ function ProfileComponent(){
         <div>Loading...</div>
       )
     }
-    console.log(user)
     return (
         <>
       <div className="profile-container">

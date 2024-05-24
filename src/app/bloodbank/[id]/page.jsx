@@ -16,7 +16,6 @@ function BloodBank({params}){
       setBloodbankObj(bloodBankParam)
       setDistance(distanceParam)
     },[])
-    console.log(bloodbankObj)
     if(!bloodbankObj){
         return (
           <h6>loding...</h6>

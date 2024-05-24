@@ -39,9 +39,8 @@ const SignUpComponent = () => {
         }else{
           setErrors(data.message)
         }
-        console.log(data)
     } catch (error) {
-        console.log('error is ',error)
+        throw new Error(error)
     }
   };
 

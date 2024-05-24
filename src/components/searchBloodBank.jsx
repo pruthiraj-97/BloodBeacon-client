@@ -31,9 +31,7 @@ function SearchBloodBankCompo(){
           })
         })
         const data=await response.json()
-        console.log(data)
         if(data.status==200){
-           console.log(data)
            const bloodBanks=encodeURIComponent(JSON.stringify(data.searchBloodBanks))
            router.push(`/bloodbank/nearbloodbank?bloodbanks=${bloodBanks}`)
         }else if(data.status==400){
@@ -57,7 +55,6 @@ function SearchBloodBankCompo(){
           })
         })
         const data=await response.json()
-        console.log(data)
         if(data.status==200){
           setIsRequestSuccess(true)
         }else if(data.status==500){
@@ -93,7 +90,7 @@ function SearchBloodBankCompo(){
         </select>
         <button type="submit" onClick={getNearBloodbank}>Search</button>
       </form>
-      <h3>Post Emergency Request</h3>
+      <h3 className='emergency-request-h3'>Post Emergency Request</h3>
             <form className="emergency-request" onSubmit={postEmergencyRequest}>
                 <textarea
                     name="message"

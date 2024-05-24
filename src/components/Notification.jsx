@@ -19,7 +19,6 @@ function NotificationCompo(){
         }
        })
        const data=await response.json()
-       console.log(data)
        if(data.status==401){
           router.push('/login')
        }else if(data.status==200){
@@ -41,7 +40,6 @@ function NotificationCompo(){
                }
            })
            const data=await response.json()
-           console.log(data)
            if(data.status==500){
             throw new Error(data.message)
            }else{

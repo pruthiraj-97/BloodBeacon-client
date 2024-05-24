@@ -1,8 +1,8 @@
 import Image from "next/image";
+import React from "react";
+import HomeComponent from "@/components/Home";
 export default function Home() {
   return (
-    <>
-     <p>hello</p>
-    </>
+    <HomeComponent/>
   );
 }

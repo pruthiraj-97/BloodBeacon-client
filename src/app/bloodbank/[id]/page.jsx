@@ -5,7 +5,7 @@ import { useState,useEffect } from "react";
 import {useRouter} from 'next/navigation'
 import { useSearchParams } from "next/navigation";
 import UserBloodGroup from '@/components/userBloodGroup';
-function BloodBank({params}){
+function BloodBank(){
     const router=useRouter()
     const searchParams=useSearchParams()
     const [bloodbankObj, setBloodbankObj] = useState(null);

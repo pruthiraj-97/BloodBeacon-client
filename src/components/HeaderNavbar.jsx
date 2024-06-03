@@ -39,7 +39,7 @@ function HeaderNavbar(){
             <div className="navbar-icons">
                 <NotificationIcon/>
                 <div className="profile-menu">
-                    <img src={PROFILE_LOGO} 
+                    <img src="https://avatar.iran.liara.run/public/boy" 
                       onClick={() => setProfileDropdown(!profileDropdown)}
                     alt="Profile" className="profile-logo" />
                     {profileDropdown && (
